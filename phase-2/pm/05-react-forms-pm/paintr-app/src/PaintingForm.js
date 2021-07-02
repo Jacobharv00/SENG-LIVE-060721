@@ -4,42 +4,44 @@ import { useState } from 'react';
 
 
 function PaintingForm() {
-    // create a state to keep track of ImgURL
-    // const [stateName, setterMethod] = useState(initialStateValue);
+// create a state to keep track of ImgURL
+// const [stateName, setterMethod] = useState(initialStateValue);
+  const[formData, setFormData] = setState([])
+  
+  const [imgUrl, setImgUrl] = useState("");
 
-    const [imgUrl, setImgUrl] = useState("");
+  function handleImgUrl(e) {
+    setImgUrl(e.target.value)
+  }
 
-    // create a callback function (handleImgUrl) that will trigger updates
-    // to our imgUrl state as we make changes to our "ImgURL"
-    // input
+{/* Breakout Activity #1: Add necessary callback functions to "control" all remaining <inputs>. 
+Extra Credit: How we can avoid using separate callback functions to handle each controlled <input>? */}
 
-    {/* Breakout Activity #1: Add necessary callback functions to "control" all remaining <inputs>. 
+return (
+  <div>
+    <h1> Add a New Painting</h1>
+    <form>
+      <input 
+        type="text" 
+        placeholder="ImgURL" 
+        onChange={handleImgUrl}
+        value={imgUrl}    
+        /> <br/>
+
+    {/* Breakout Activity #1: Add necessary attributes to "control" all remaining <inputs>. 
     Extra Credit: How we can avoid using separate callback functions to handle each controlled <input>? */}
+      <input type="text" placeholder="Title"/><br/>
+      <input type="text" placeholder="Artist Name"/><br/>
+      <input type="text" placeholder="date"/><br/>
+      <input type="text" placeholder="width"/><br/>
+      <input type="text" placeholder="height"/><br/>
 
-    return (
-        <div>
-            <h1> Add a New Painting</h1>
-            <form>
+      <input type="submit" value="Add New Painting"/>
+    </form>
 
-                {/* Add onChange event handler to invoke handleImgUrl upon each
-                keystroke change and set value equal to imgUrl to keep state / value
-                in sync */}
-                <input type="text" placeholder="ImgURL"/> <br/>
-
-                {/* Breakout Activity #1: Add necessary attributes to "control" all remaining <inputs>. 
-                Extra Credit: How we can avoid using separate callback functions to handle each controlled <input>? */}
-                <input type="text" placeholder="Title"/><br/>
-                <input type="text" placeholder="Artist Name"/><br/>
-                <input type="text" placeholder="date"/><br/>
-                <input type="text" placeholder="width"/><br/>
-                <input type="text" placeholder="height"/><br/>
-
-                <input type="submit" value="Add New Painting"/>
-            </form>
-
-            {/* Breakout Activity #2: Dynamically display a list of Added Titles / Artists as we continue to submit new Painting entries.  */}
-        </div>
-    );
+{/* Breakout Activity #2: Dynamically display a list of Added Titles / Artists as we continue to submit new Painting entries.  */}
+  </div>
+  );
 }
 
 export default PaintingForm;

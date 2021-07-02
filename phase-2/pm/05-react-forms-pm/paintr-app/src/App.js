@@ -36,7 +36,7 @@ function App() {
   // Create callback function to change Parent's "paintings" state to be sorted by votes
   function sortPaintings() {
     
-    // Use the spread (...) operator to clone the state / prompt React to ackowledge the state change
+    // Use the spread (...) operator to clone the state / prompt React to acknowledge the state change
     let originalList = [...paintingsData];
     
     // .sort() "sorts" the elements of an array and returns the sorted array.
